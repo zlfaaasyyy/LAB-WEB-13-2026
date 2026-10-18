@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Marsha - Pantau Tugas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+    .font-mono-badge { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  </style>
+</head>
+<body class="bg-slate-50 text-gray-900 antialiased">
+  <div class="mx-auto flex h-screen max-w-7xl flex-col gap-5 p-4 md:flex-row md:p-6">
+
+    
+    <aside class="flex max-h-[40vh] w-full shrink-0 flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm md:max-h-none md:w-80">
+      <div class="px-7 pb-3 pt-7">
+        <h1 class="text-2xl font-bold tracking-tight">Tim Marsha</h1>
+        <p class="mt-5 text-sm font-medium text-gray-500">Anggota</p>
+      </div>
+      <p id="status-anggota" class="px-7 pb-3 text-sm text-gray-500"></p>
+      <div id="daftar-anggota" class="flex flex-1 flex-col gap-1 overflow-y-auto px-3 pb-4"></div>
+    </aside>
+
+    
+    <main class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+      <header class="flex flex-col gap-4 border-b border-gray-100 px-6 pb-6 pt-7 md:flex-row md:items-end md:justify-between md:px-8">
+        <div>
+          <h2 id="judul-tugas" class="text-3xl font-bold tracking-tight">Tugas</h2>
+          <p id="ringkasan" class="mt-2 text-gray-500">Pilih anggota di sebelah kiri untuk melihat tugasnya.</p>
+        </div>
+        <div class="h-1.5 w-full overflow-hidden rounded-full bg-gray-200 md:w-96">
+          <div id="bar-progres" class="h-full w-0 rounded-full bg-green-600 transition-all duration-300"></div>
+        </div>
+      </header>
+
+      <section class="border-b border-gray-100 px-6 py-5 md:px-8">
+        <div class="flex flex-col gap-3 md:flex-row">
+          <input
+            id="cari"
+            type="text"
+            placeholder="Cari judul tugas"
+            autocomplete="off"
+            disabled
+            class="w-full rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-gray-800 placeholder-gray-400 outline-none transition focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 disabled:cursor-not-allowed disabled:opacity-60 md:w-72"
+          />
+          <form id="form-tugas" novalidate class="flex flex-1 flex-col gap-3 sm:flex-row">
+            <input
+              id="judul-baru"
+              type="text"
+              placeholder="Tambah tugas baru, minimal 5 karakter"
+              autocomplete="off"
+              disabled
+              class="min-w-0 flex-1 rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:opacity-60"
+            />
+            <button
+              id="tombol-simpan"
+              type="submit"
+              disabled
+              class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+            >Simpan</button>
+          </form>
+        </div>
+        <p id="pesan-form" role="alert" class="mt-2 min-h-5 text-sm text-red-600"></p>
+      </section>
+
+      <section class="min-h-0 flex-1 overflow-y-auto">
+        <p id="status-tugas" class="px-8 py-6 text-gray-500"></p>
+        <button
+          id="tombol-coba-lagi"
+          type="button"
+          class="hidden mx-8 mb-6 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+        >Coba Lagi</button>
+        <ul id="daftar-tugas"></ul>
+        <p id="kosong-cari" class="hidden px-8 py-6 text-gray-500">Tidak ada tugas yang cocok</p>
+      </section>
+    </main>
+  </div>
+
+  
+  <div
+    id="notifikasi"
+    role="status"
+    class="hidden fixed bottom-6 right-6 rounded-xl bg-green-600 px-5 py-3 text-sm font-medium text-white shadow-lg"
+  ></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
