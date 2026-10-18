@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papan Tugas Tim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f2f7f4] font-sans text-gray-800">
+
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 p-6 md:h-screen md:flex-row">
+
+    <aside class="flex flex-col rounded-3xl border border-[#e1ece5] bg-white p-6 shadow-sm md:min-h-0 md:w-80 md:shrink-0">
+      <p class="text-xs font-bold uppercase tracking-wider text-[#2f6b4f]">Papan Tugas Tim</p>
+      <div class="mt-1 flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-[#2f6b4f]"></span>
+        <h1 class="font-serif text-2xl font-bold text-[#1e4632]">Tim Marsha</h1>
+      </div>
+      <p class="mt-1 text-xs font-bold uppercase tracking-wider text-[#2f6b4f]">Daftar Anggota</p>
+
+      <p id="statusAnggota" class="mt-2 text-sm text-gray-500"></p>
+      <div id="daftarAnggota" class="mt-4 flex max-h-96 flex-col gap-1 overflow-y-auto md:max-h-none md:min-h-0 md:flex-1"></div>
+    </aside>
+
+    <main class="flex flex-1 flex-col overflow-hidden rounded-3xl border border-[#e1ece5] bg-white shadow-sm md:min-h-0">
+
+      <div class="flex flex-col gap-4 border-b border-[#e1ece5] p-6 md:flex-row md:items-start md:justify-between">
+        <div>
+          <h2 id="judulTugas" class="font-serif text-2xl font-bold text-[#16352a]">Pilih Anggota Tim</h2>
+          <p id="ringkasan" class="mt-1 text-gray-600">Pilih salah satu anggota untuk melihat daftar tugas.</p>
+        </div>
+
+        <div class="w-full rounded-2xl border border-[#e1ece5] bg-[#f2f7f4] px-4 py-3 md:w-72">
+          <div class="flex justify-between gap-3 text-sm">
+            <span id="namaProgres" class="truncate text-[#25573f]">Progres</span>
+            <span id="persenProgres" class="font-bold text-[#1e4632]">0%</span>
+          </div>
+          <div class="mt-2 h-2 w-full rounded-full bg-[#e1ece5]">
+            <div id="barProgres" class="h-2 rounded-full bg-[#2f6b4f]" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <div class="flex flex-col gap-3 md:flex-row">
+          <input id="inputCari" type="text" placeholder="Cari judul tugas"
+            class="rounded-lg border border-[#e1ece5] bg-[#f2f7f4] px-4 py-3 outline-none focus:border-[#2f6b4f] md:w-72" />
+
+          <form id="formTambah" class="flex flex-1 gap-3">
+            <input id="inputJudul" type="text" placeholder="Tambah tugas baru, minimal 5 karakter"
+              class="flex-1 rounded-lg border border-[#e1ece5] px-4 py-3 outline-none focus:border-[#2f6b4f]" />
+            <button id="tombolSimpan" type="submit"
+              class="rounded-lg bg-[#25573f] px-5 py-3 font-bold text-white hover:bg-[#1e4632] disabled:opacity-60">Simpan</button>
+          </form>
+        </div>
+
+        <p id="errorForm" class="mt-2 text-sm text-red-600"></p>
+        <p id="notifikasi" class="mt-2 text-sm text-[#25573f]"></p>
+      </div>
+
+      <div class="border-t border-[#e1ece5] md:min-h-0 md:flex-1 md:overflow-y-auto">
+        <p id="statusTugas" class="px-6 pt-3 text-gray-500"></p>
+
+        <ul id="daftarTugas"></ul>
+
+        <p id="pesanKosong" class="hidden p-6 text-gray-500">Tidak ada tugas yang cocok.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
