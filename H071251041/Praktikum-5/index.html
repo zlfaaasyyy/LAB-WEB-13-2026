@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Tugas Tim Marsha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans p-4 sm:p-6 md:p-10">
+
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center"> Dashboard Manajemen Tim Marsha</h1>
+
+    <div class="flex flex-col md:flex-row gap-6">
+      
+      <!-- bagian anggota -->
+      <div class="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4 pb-2">Daftar Anggota</h2>
+        
+        <p id="loadingAnggota" class="text-blue-400">Memuat Anggota...</p>
+        <p id="errorAnggota" class="text-red-600 hidden">Gagal Memuat Anggota</p>
+        
+        <ul id="anggota" class="my-2"></ul>
+      </div>
+
+      <!-- bagian tugas -->
+      <div id="tugas" class="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md">
+        
+        <!-- bagian awalnya tugas -->
+        <div id="tugasAwal">
+          <h2 class="text-2xl font-bold text-black">Daftar Tugas Anggota Tim</h2>
+        </div>
+
+        <!-- hidden dulu -->
+        <div id="listTugas" class="hidden">
+          <h2 id="judulTugas" class="text-2xl font-bold mb-4 pb-2"></h2>
+
+          <input type="text" placeholder="Cari Tugas..." id="cariTugas" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+
+          <form id="tambahTugas" class="mb-2 bg-gray-100 p-4 rounded-md border border-gray-300">
+            <h3 class="font-bold mb-2">Tambah Tugas Baru</h3>
+
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input type="text" id="inputTugas" placeholder="Judul Tugas..." class="flex-1 p-2 border border-gray-300 rounded-md">
+              <button type="submit" id="simpanTugas" class="bg-blue-400 px-4 py-2 rounded-md font-bold">Simpan</button>
+            </div>
+
+            <p id="errorSubmit" class="text-red-600 text-sm mt-2"></p>
+            <p id="suksesSubmit" class="text-green-600 text-sm mt-2"></p>
+          </form>
+
+          <p id="SemuaTugas" class="font-bold mb-4"></p>
+          <p id="loadingTugas" class="text-blue-400"></p>
+          <p id="errorTugas" class="text-red-600"></p>
+
+          <ul id="daftarTugas" class="my-2"></ul>
+
+          <p id="tugasKosong" class="text-gray-500 italic hidden">Tidak ada tugas yang sesuai.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
