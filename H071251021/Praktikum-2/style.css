@@ -1,0 +1,235 @@
+/* ---------- Variabel warna ---------- */
+:root {
+    --krem: #F5EFE3;
+    --hijau: #4F5B2A;
+    --emas: #B8892D;
+    --background: #D8C9A8;
+    --teks: #2E3520;
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+    background-color: var(--krem);
+    color: var(--teks);
+}
+
+h3 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    color: var(--hijau);
+    border-bottom: 3px solid var(--emas);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--background);
+    margin: 20px 0;
+}
+
+a {
+    color: var(--emas);
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+video {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid var(--emas);
+    border-radius: 8px;
+}
+
+/* ---------- Tabel ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--hijau);
+    color: var(--krem);
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid var(--hijau);
+}
+
+#home {
+    background-color: var(--hijau);
+    color: var(--krem);
+    text-align: center;
+    padding: 25px 15px 10px;
+    border-bottom: 5px solid var(--emas);
+}
+
+#home h1 {
+    margin: 0 0 15px;
+    font-size: 2.2rem;
+}
+
+#contact {
+    margin-top: 15px;
+}
+
+.section {
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 2px solid var(--background);
+    border-radius: 10px;
+}
+
+/* ------- Formulir ------- */
+
+#formulir p {
+    color: var(--hijau);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+#formulir label {
+    display: block;
+    font-weight: bold;
+    color: var(--hijau);
+    margin-bottom: 5px;
+    margin-top: 15px; 
+}
+
+#formulir input[type="text"],
+#formulir input[type="email"],
+#formulir textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--background);
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--teks);
+    background-color: #FAFAFA;
+}
+
+#formulir textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#formulir input[type="submit"] {
+    background-color: var(--emas);
+    color: var(--krem);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* ------- navigasi ------- */
+nav {
+    display: flex;
+    flex-wrap: wrap;           
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    padding: 8px 14px;
+    color: var(--krem);
+    text-decoration: none;
+    border: 1px solid var(--background);
+    border-radius: 20px;
+}
+
+/* ---------- galeri foto ---------- */
+.galeri {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.galeri img {
+    width: 200px;
+    height: 300px;
+    border: 2px solid var(--emas);
+    border-radius: 8px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background-color: var(--hijau);
+    color: var(--krem);
+    text-align: center;
+    padding: 20px 15px;
+    border-top: 5px solid var(--emas);
+}
+
+/* ------- Pseudo class ------- */
+nav a:hover {
+    background-color: var(--emas);
+}
+
+tbody tr:hover {
+    background-color: var(--background);
+}
+
+#formulir input[type="submit"]:hover {
+    background-color: var(--hijau);
+}
+
+#formulir input[type="text"]:focus,
+#formulir input[type="email"]:focus,
+#formulir textarea:focus {
+    outline: none;
+    border-color: var(--emas);
+    background-color: #FFFFFF;
+}
+
+/* ------- Media ------- */
+@media (max-width: 600px) {
+    #home h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeri img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .form-input {
+        max-width: 100%;
+    }
+
+    #formulir input[type="submit"] {
+        width: 100%; 
+    }
+}
