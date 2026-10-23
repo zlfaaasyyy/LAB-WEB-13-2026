@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #2f4b34;
+  --color-forest-deep: #243a29;
+  --color-cream: #f7efe0;
+  --color-cream2: #efe4cf;
+  --color-card: #fffaf0;
+  --color-ink: #1e1e1c;
+  --color-muted: #55524a;
+  --color-line: rgb(30 30 28 / 0.18);
+  --color-night: #1b1b19;
+  --color-ember: #ff5f33;
+  --color-sun: #ffd21f;
+
+  --font-head: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+body {
+  @apply bg-cream font-body leading-relaxed text-ink antialiased;
+  overflow-x: hidden;
+}
