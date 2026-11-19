@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root {
+  --pink--muda: #f1d3df;
+  --pink: #f6bad6;
+  --maroon: #420d19;
+  --coklat: #2f020c;
+  --merah: #741e31;
+  --putih:#fcf1f5;
+}
