@@ -1,0 +1,104 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #f4f7f8;
+    overflow-x: hidden;
+    padding: 30px;
+}
+header h1{
+    top: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3B96FF;
+    color: #f4f7f8;
+    padding: 20px;
+}
+
+#beranda{
+    background-image: url("bira-main.png");
+    position : relative;
+}
+#beranda h1 {
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+}
+#beranda p {
+    font-size: 14px ;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+nav{
+    background-color: #3B96FF;
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    display: inline;
+}
+nav ul a{
+    display: block;
+    color: #f4f7f8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav ul a:hover{
+    background-color: rgba(0, 0, 0, 0.12);
+}
+#section-beranda h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    background-color: #3B96FF;
+}
+#tentang h2 , #galeri h2, #aktivitas h2, #informasi h2, #rencana h2, #kontak h2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    letter-spacing: 2px;
+    background-color: #FF8C00;
+}
+#tentang p, #galeri p, #aktivitas p, #informasi p, #rencana p, #kontak p{
+    padding: 10px;
+    background-color: #3B96FF;
+    border-radius: 10px;
+}
+#galeri figure{
+    margin: 20px 0;
+    display: flex;
+}
+#aktivitas thead{
+    background-color: #3B96FF;
+    color: #f4f7f8;
+}
+#aktivitas tbody{
+    background-color: #a1cdff;
+}
+#galeri figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FF8C00;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+footer{
+    background-color: #3B96FF;
+    color: #f4f7f8;
+    text-align: center;
+    padding: 10px;
+}
+
+
