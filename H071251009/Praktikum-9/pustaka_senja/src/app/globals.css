@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f3efe8;
+  --foreground: #29251f;
+  --accent: #a64f37;
+  --paper: #faf8f3;
+  --line: #d9d0c4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgb(166 79 55 / 5%), transparent 30rem),
+    var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--paper);
+}
+
+.hero-abstract {
+  background:
+    radial-gradient(ellipse at 78% 45%, rgb(190 125 84 / 20%), transparent 24rem),
+    linear-gradient(115deg, #e9e0d3 0%, #efe8dc 55%, #e1d4c4 100%);
+}
+
+.hero-orbit {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  width: min(35vw, 22rem);
+  aspect-ratio: 1;
+  border: 1px solid rgb(127 76 57 / 28%);
+  border-radius: 47% 53% 61% 39% / 43% 42% 58% 57%;
+  transform: translateY(-50%) rotate(-24deg);
+}
+
+.hero-orbit::before,
+.hero-orbit::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgb(127 76 57 / 25%);
+  border-radius: 50%;
+}
+
+.hero-orbit::before {
+  inset: 12%;
+  transform: rotate(38deg) scaleX(0.58);
+}
+
+.hero-orbit::after {
+  inset: 27% -14%;
+  transform: rotate(-35deg);
+}
+
+@media (max-width: 640px) {
+  .hero-orbit {
+    top: 18%;
+    right: -15%;
+    width: 15rem;
+    opacity: 0.55;
+    transform: translateY(-50%) rotate(-24deg);
+  }
+}
